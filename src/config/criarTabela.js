@@ -1,7 +1,7 @@
-import Estoque from '../models/Estoque.js'
+import EstoqueTable from '../Estoque/CriaEstoque.js'
 
 
-Estoque
+EstoqueTable
     .sync()
     .then( () => {
         console.log('tabela criada com sucesso')
