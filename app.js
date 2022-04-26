@@ -1,6 +1,7 @@
 import express from "express";
 import database from "./src/config/db.js";
 import estoqueRouter from "./src/routers/Estoque/app.js";
+import cardapioRouter from "./src/routers/Cardapio/app.js";
 
 const app = express();
 
@@ -13,3 +14,4 @@ app.listen(port, ()=> {
 })
 
 app.post('/api/estoque', estoqueRouter)
+app.post('/api/cardapio', cardapioRouter)
