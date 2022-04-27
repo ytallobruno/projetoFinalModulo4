@@ -12,4 +12,6 @@ app.listen(port, ()=> {
     console.log(`A API está funcionando com sucesso na porta ${port}`)
 })
 
-app.post('/api/estoque', estoqueRouter)
+app.get('/api/estoque', estoqueRouter)
+
+/// app.post('/api/estoque', estoqueRouter)

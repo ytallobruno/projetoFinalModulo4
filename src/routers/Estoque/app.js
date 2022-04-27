@@ -5,16 +5,23 @@ import EstoqueController from "../../Estoque/controllers/EstoqueController.js";
 const estoqueRouter = express.Router()
 
 
+
+// estoqueRouter.use('/', async (req, res) => {
+  //   const dados = req.body
+    // const estoqueController = new EstoqueController(dados)
+    // await estoqueController.adicionar(estoqueController)
+    // res.status(200).json({estoqueController})
+// })
+
+
 estoqueRouter.use('/', async (req, res) => {
-    const dados = req.body
-    const estoque = new EstoqueModel(dados)
-    await EstoqueController.adicionar(estoque)
+    try {
+    const estoque = await EstoqueController.listar()
     res.status(200).json({estoque})
-})
-
-
-estoqueRouter.use('/', (req, res) => {
-
+    } catch (error) {
+     console.log(e)
+     res.status(404).send(e)
+    }
 })
 
 
