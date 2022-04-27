@@ -1,7 +1,7 @@
-import Estoque from '../models/Estoque.js'
+import CardapioTable from '../Cardapio/CriaCardapio.js'
 
 
-Estoque
+CardapioTable
     .sync()
     .then( () => {
         console.log('tabela criada com sucesso')
