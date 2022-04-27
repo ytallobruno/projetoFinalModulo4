@@ -1,42 +1,46 @@
 import Sequelize, { Model } from 'sequelize'
 import database from '../config/db.js'
 
-class EstoqueTable extends Model {}
+class FornecedorTable extends Model {}
 
-EstoqueTable.init(
+FornecedorTable.init(
     {
-        id: {
+        id_fornecedor: {
             type: Sequelize.INTEGER,
             primaryKey: true,
         },
 
-        nome_produto: {
+        razao_social: {
             type: Sequelize.CHAR
         },
 
-        quantidade: {
-            type: Sequelize.INTEGER
+        nome_fantasia: {
+            type: Sequelize.CHAR
         },
 
-        id_fornecedor: {
-            type: Sequelize.INTEGER
+        endereco: {
+            type: Sequelize.CHAR
         },
 
         tipo: {
             type: Sequelize.ENUM('bebida', 'higiene', 'alimento', 'utilitario')
         },
 
-        validade: {
-            type: Sequelize.DATE
+        id_item: {
+            type: Sequelize.INTEGER
         },
+
+        tempo_entrega: {
+            type: Sequelize.INTEGER
+        }
 
     },
 
     {
         sequelize: database,
-        modelName: 'Estoque',
+        modelName: 'Fornecedor',
         timestamps: false
     }
     )
 
-    export default EstoqueTable
+    export default FornecedorTable
