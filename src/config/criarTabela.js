@@ -1,7 +1,7 @@
-import CardapioTable from '../Cardapio/CriaCardapio.js'
+import ClientesTable from '../Cardapio/Cria.js'
 
 
-CardapioTable
+ClientesTable
     .sync()
     .then( () => {
         console.log('tabela criada com sucesso')
