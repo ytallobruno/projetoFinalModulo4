@@ -17,7 +17,7 @@ class ClientesController {
     return ClientesTable.findByPk(req.params.id);
   }
 
-  adicionar() {
+  static adicionar() {
     const cliente = new ClientesModel(this);
     return ClientesTable.create(cliente);
   }
