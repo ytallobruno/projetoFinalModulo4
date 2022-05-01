@@ -37,9 +37,9 @@ ClientesRouter.get("/:id", async (req, res) => {
 
 ClientesRouter.get("/", async (req, res) => {
   try {
-    const cliente = await ClientesController.listar();
+    const clientes = await ClientesController.listar();
     console.log(req.params);
-    res.status(200).json({ cliente });
+    res.status(200).json({ clientes });
   } catch (e) {
     res.status(400).json({ erro: e.message });
   }
