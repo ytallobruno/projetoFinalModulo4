@@ -25,7 +25,7 @@ class ClientesController {
   static deletar(idDeletado) {
     ClientesTable.destroy({
       where: {
-        id: idDeletado,
+        id_comanda: idDeletado,
       },
     });
   }
@@ -33,7 +33,7 @@ class ClientesController {
   static update(req) {
     ClientesTable.update(req.body, {
       where: {
-        id: req.params.id,
+        id_comanda: req.params.id,
       },
     });
   }
