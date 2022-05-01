@@ -1,21 +1,68 @@
 import express from "express";
-import ClientesModel from "../../Clientes/models/ClientesModel.js";
 import ClientesController from "../../Clientes/controllers/ClientesController.js";
+import ClientesModel from "../../Clientes/models/ClientesModel.js";
+import Validador from "../../utils/Clientes/Validador.js";
 
-const clientesRouter = express.Router()
+const ClientesRouter = express.Router();
 
+ClientesRouter.post("/", async (req, res) => {
+  try {
+    if (Validador.checaEmail(req.body.validade)) {
+      const dados = req.body
+      const cliente = new ClientesModel(dados)
+      await ClientesController.adicionar(cliente)
+      res.status(201).json({cliente})
+    } else {
+      throw new Error("E-mail inválido! Ensina um no seguinte formato: usuario@dominio.com");
+    }
+  } catch (e) {
+    res.status(400).json({ erro: e.message });
+  }
+});
 
-clientesRouter.use('/', async (req, res) => {
-    const dados = req.body
-    const cliente = new ClientesModel(dados)
-    await ClientesController.adicionar(cliente)
-    res.status(200).json({cliente})
-})
+ClientesRouter.get("/:id", async (req, res) => {
+  try {
+    const cliente = await ClientesController.listarUmItemPorId(req);
+    if (cliente != null) {
+      res.status(200).json({ cliente });
+    } else {
+      throw new Error(
+        "Comanda não encontrada. Verifique se o ID está correto e tente novamente."
+      );
+    }
+  } catch (e) {
+    res.status(400).json({ erro: e.message });
+  }
+});
 
+ClientesRouter.get("/", async (req, res) => {
+  try {
+    const cliente = await ClientesController.listar();
+    console.log(req.params);
+    res.status(200).json({ cliente });
+  } catch (error) {
+    res.status(400).json({ erro: e.message });
+  }
+});
 
-clientesRouter.use('/', (req, res) => {
+ClientesRouter.delete("/:id", async (req, res) => {
+  try {
+    const deletado = await ClientesController.deletar(req.params.id);
+    const cliente = await ClientesController.listar();
+    res.status(200).json({ cliente });
+  } catch (e) {
+    res.status(400).json({ erro: e.message });
+  }
+});
 
-})
+ClientesRouter.patch("/:id", async (req, res) => {
+  try {
+    const modificado = await ClientesController.update(req);
+    const cliente = await ClientesController.listar();
+    res.status(200).json({ cliente });
+  } catch (e) {
+    res.status(400).json({ erro: e.message });
+  }
+});
 
-
-export default clientesRouter
+export default ClientesRouter;
