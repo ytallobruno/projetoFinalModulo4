@@ -33,7 +33,7 @@ class ClientesController {
   static update(req) {
     ClientesTable.update(req.body, {
       where: {
-        id_comanda: req.params.id,
+        id_comanda: req.params.id_comanda,
       },
     });
   }
