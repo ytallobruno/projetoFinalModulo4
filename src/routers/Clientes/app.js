@@ -40,7 +40,7 @@ ClientesRouter.get("/", async (req, res) => {
     const cliente = await ClientesController.listar();
     console.log(req.params);
     res.status(200).json({ cliente });
-  } catch (error) {
+  } catch (e) {
     res.status(400).json({ erro: e.message });
   }
 });
