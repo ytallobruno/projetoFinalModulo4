@@ -1,4 +1,4 @@
-import ClientesTable from '../Cardapio/Cria.js'
+import ClientesTable from '../Clientes/CriarCliente.js'
 
 
 ClientesTable
