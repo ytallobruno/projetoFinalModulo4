@@ -11,15 +11,15 @@ ClientesTable.init(
     },
 
     id_pedido: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.INTEGER
     },
 
     nome_cliente: {
-      type: Sequelize.CHAR,
+      type: Sequelize.CHAR
     },
 
     email_cliente: {
-      type: Sequelize.CHAR,
+      type: Sequelize.CHAR
     },
   },
 
