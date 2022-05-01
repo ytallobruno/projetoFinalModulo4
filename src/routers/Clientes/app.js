@@ -8,8 +8,8 @@ const ClientesRouter = express.Router();
 ClientesRouter.post("/", async (req, res) => {
   try {
     if (Validador.checaEmail(req.body.email_cliente)) {
-      const dados = req.body
-      const cliente = new ClientesModel(dados)
+      const dados = Object.values(req.body)
+      const cliente = new ClientesModel(...dados)
       await ClientesController.adicionar(cliente)
       res.status(201).json({cliente})
     } else {
