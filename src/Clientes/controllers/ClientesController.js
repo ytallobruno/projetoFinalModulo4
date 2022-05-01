@@ -1,13 +1,6 @@
 import ClientesTable from "../CriarCliente.js";
-import ClientesModel from "../models/ClientesModel.js";
 
 class ClientesController {
-  constructor({ id_comanda, id_pedido, nome_cliente, email_cliente }) {
-    this.id_comanda = id_comanda;
-    this.id_pedido = id_pedido;
-    this.nome_cliente = nome_cliente;
-    this.email_cliente = email_cliente;
-  }
 
   static listar() {
     return ClientesTable.findAll();
@@ -17,8 +10,7 @@ class ClientesController {
     return ClientesTable.findByPk(req.params.id_comanda);
   }
 
-  static adicionar() {
-    const cliente = new ClientesModel(this);
+  static adicionar(cliente) {
     return ClientesTable.create(cliente);
   }
 
