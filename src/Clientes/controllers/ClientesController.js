@@ -14,7 +14,7 @@ class ClientesController {
   }
 
   static listarUmItemPorId(req) {
-    return ClientesTable.findByPk(req.params.id);
+    return ClientesTable.findByPk(req.params.id_comanda);
   }
 
   static adicionar() {
