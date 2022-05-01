@@ -1,5 +1,6 @@
 import express from "express";
 import estoqueRouter from "./src/routers/Estoque/app.js";
+import ClientesRouter from "./src/routers/Clientes/app.js";
 
 const app = express();
 
@@ -13,3 +14,4 @@ app.listen(port, ()=> {
 
 
 app.use("/api/estoque", estoqueRouter)
+app.use("/api/clientes", ClientesRouter)
