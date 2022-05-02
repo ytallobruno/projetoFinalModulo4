@@ -7,7 +7,7 @@ class ClientesController {
   }
 
   static listarUmItemPorId(req) {
-    return ClientesTable.findByPk(req.params.id_comanda);
+    return ClientesTable.findByPk(req.params.id);
   }
 
   static adicionar(cliente) {
@@ -25,7 +25,7 @@ class ClientesController {
   static update(req) {
     ClientesTable.update(req.body, {
       where: {
-        id_comanda: req.params.id_comanda,
+        id_comanda: req.params.id,
       },
     });
   }
