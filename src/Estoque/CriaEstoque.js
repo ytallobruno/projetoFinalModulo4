@@ -34,7 +34,7 @@ EstoqueTable.init(
 
     {
         sequelize: database,
-        modelName: 'Estoque',
+        modelName: 'Estoques',
         timestamps: false
     }
     )

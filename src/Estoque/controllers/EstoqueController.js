@@ -1,24 +1,51 @@
 import EstoqueTable from "../CriaEstoque.js"
 import EstoqueModel from "../models/EstoqueModel.js";
-import Validador from "../../utils/Estoque/Validador.js";
 
 class EstoqueController {
-
     constructor({ id, nome_produto, quantidade, id_fornecedor, tipo, validade }){
         this.id = id;
         this.nome_produto = nome_produto;
         this.quantidade = quantidade;
         this.id_fornecedor = id_fornecedor;
         this.tipo = tipo;
-        this.validade = Validador.checaValidade(validade)
+        this.validade = validade
     }
 
     static listar (){
         return EstoqueTable.findAll()
     }
+
+    static listarUmItemPorId(req){
+ 
+        return EstoqueTable.findByPk(req.params.id)
+
+    }
+
     adicionar(){
         const estoque = new EstoqueModel(this)
         return EstoqueTable.create(estoque)
+    }
+
+    static deletar (idDeletado){
+        EstoqueTable.destroy(
+            {
+                where: {
+                    id: idDeletado
+                }
+            }
+        )
+    }
+
+    static update(req) {
+        EstoqueTable.update(
+            req.body
+        ,
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+        )
     }
 }
 
