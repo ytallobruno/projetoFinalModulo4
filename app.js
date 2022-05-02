@@ -1,6 +1,7 @@
 import express from "express";
 import estoqueRouter from "./src/routers/Estoque/app.js";
 import ClientesRouter from "./src/routers/Clientes/app.js";
+import cardapioRouter from "./src/routers/Cardapio/app.js";
 
 const app = express();
 
@@ -15,4 +16,5 @@ app.listen(port, ()=> {
 
 app.use("/api/", estoqueRouter)
 app.use("/api/clientes", ClientesRouter)
+app.use("/api/cardapio", cardapioRouter)
 
