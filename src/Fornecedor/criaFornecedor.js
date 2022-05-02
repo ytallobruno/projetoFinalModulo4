@@ -8,6 +8,7 @@ FornecedorTable.init(
         id_fornecedor: {
             type: Sequelize.INTEGER,
             primaryKey: true,
+            autoIncrement: true
         },
 
         razao_social: {
@@ -22,16 +23,21 @@ FornecedorTable.init(
             type: Sequelize.CHAR
         },
 
+        telefone: {
+            type: Sequelize.NUMBER
+        },
+
+
         tipo: {
             type: Sequelize.ENUM('bebida', 'higiene', 'alimento', 'utilitario')
         },
 
-        id_item: {
-            type: Sequelize.INTEGER
+        tipo_secundario: {
+            type: Sequelize.ENUM('bebida', 'higiene', 'alimento', 'utilitario')
         },
 
         tempo_entrega: {
-            type: Sequelize.INTEGER
+            type: Sequelize.STRING
         }
 
     },
