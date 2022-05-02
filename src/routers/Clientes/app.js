@@ -58,7 +58,7 @@ ClientesRouter.delete("/:id", async (req, res) => {
 ClientesRouter.patch("/:id", async (req, res) => {
   try {
     const modificado = await ClientesController.update(req);
-    const cliente = await ClientesController.listar();
+    const cliente = await ClientesController.listarUmItemPorId(req);
     res.status(200).json({ cliente });
   } catch (e) {
     res.status(400).json({ erro: e.message });
