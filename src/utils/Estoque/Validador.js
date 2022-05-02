@@ -20,7 +20,6 @@
                 return false
             }
         }
-    
 }
 
 export default Validador

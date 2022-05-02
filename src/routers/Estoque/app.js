@@ -5,8 +5,7 @@ import Validador from "../../utils/Estoque/Validador.js";
 const estoqueRouter = express.Router()
 
 
-
-/* estoqueRouter.post('/', async (req, res) => {
+estoqueRouter.post('/estoque', async (req, res) => {
   try {
     if (Validador.checaFormato(req.body.validade))
     {
@@ -31,12 +30,11 @@ const estoqueRouter = express.Router()
     } catch (e){
       res.status(400).json({erro: e.message})
     }
-
-  }) */
-
+  })
 
 
-/* estoqueRouter.get('/:id', async (req, res) => {
+
+estoqueRouter.get('/estoque/:id', async (req, res) => {
   try {
     const estoque = await EstoqueController.listarUmItemPorId(req)
     if(estoque != null){
@@ -47,21 +45,20 @@ const estoqueRouter = express.Router()
     } catch (e) {
       res.status(400).json({erro: e.message})
     }
-}) */
+})
 
 
-/* estoqueRouter.get('/', async (req, res) => {
+estoqueRouter.get('/estoque', async (req, res) => {
   try {
       const estoque = await EstoqueController.listar()
-      console.log(req.params)
       res.status(200).json({estoque})
-      } catch (error) {
+      } catch (e) {
        res.status(400).json({erro: e.message})
       }
-  }) */
+  })
 
 
-/* estoqueRouter.delete('/:id', async (req, res) => {
+estoqueRouter.delete('/estoque/:id', async (req, res) => {
   try {
      const deletado = await EstoqueController.deletar(req.params.id)
      const estoque = await EstoqueController.listar()
@@ -70,17 +67,18 @@ const estoqueRouter = express.Router()
   } catch (e) {
     res.status(400).json({erro: e.message})
   }
-}) */
+})
 
-estoqueRouter.patch('/:id', async (req, res) => {
+estoqueRouter.patch('/estoque/:id', async (req, res) => {
   try {
     const modificado = await EstoqueController.update(req)
     const estoque = await EstoqueController.listar()
     res.status(200).json({estoque})
-
   } catch (e) {
     res.status(400).json({erro: e.message})
   }
 })
+
+
 
 export default estoqueRouter
