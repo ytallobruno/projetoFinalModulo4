@@ -36,7 +36,7 @@ class EstoqueController {
         )
     }
 
-    static update (req) {
+    static update(req) {
         EstoqueTable.update(
             req.body
         ,
