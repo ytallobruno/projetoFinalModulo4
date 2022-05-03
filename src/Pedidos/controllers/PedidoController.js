@@ -16,7 +16,6 @@ class PedidoController {
     }
 
     static adicionar(pedido){
-        const pedido = new PedidoModel(this)
         return PedidoTable.create(pedido)
     }
 

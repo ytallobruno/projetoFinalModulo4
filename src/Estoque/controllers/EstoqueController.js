@@ -1,4 +1,5 @@
 import EstoqueTable from "../CriaEstoque.js"
+import EstoqueModel from "../models/EstoqueModel.js";
 
 class EstoqueController {
 
