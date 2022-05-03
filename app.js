@@ -6,7 +6,7 @@ import estoqueRouter from "./src/routers/Estoque/app.js";
 import ClientesRouter from "./src/routers/Clientes/app.js";
 import cardapioRouter from "./src/routers/Cardapio/app.js";
 
-const app = express();
+const app = express()
 
 app.use(express.json())
 
