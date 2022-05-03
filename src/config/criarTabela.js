@@ -1,15 +1,8 @@
-import PedidoTable from '../Pedidos/CriaPedido.js'
+import FornecedorTable from "../Fornecedor/criaFornecedor.js";
 
-
-
-
-
-PedidoTable
+FornecedorTable
     .sync()
     .then( () => {
         console.log('tabela criada com sucesso')
     })
     .catch(console.error)
-
-
-   

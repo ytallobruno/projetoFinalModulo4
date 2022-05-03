@@ -1,5 +1,4 @@
 import EstoqueTable from "../CriaEstoque.js"
-import EstoqueModel from "../models/EstoqueModel.js";
 
 class EstoqueController {
     constructor({ id, nome_produto, quantidade, id_fornecedor, tipo, validade }){

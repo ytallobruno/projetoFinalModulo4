@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize'
+import Sequelize from 'sequelize';
 
 const database = new Sequelize("database", "grupo1t14", "grupo1t14", {
     dialect: "sqlite",
