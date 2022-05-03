@@ -1,5 +1,3 @@
-
-
 class CardapioModel {
     constructor({id_item, id_pedido, descricao, preco}){
         this.id_item = id_item;

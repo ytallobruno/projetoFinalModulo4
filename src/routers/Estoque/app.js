@@ -70,7 +70,7 @@ estoqueRouter.delete('/:id', async (req, res) => {
   }
 })
 
-estoqueRouter.patch('/:id', async (req, res) => {
+estoqueRouter.patch('/estoque/:id', async (req, res) => {
   try {
     const modificado = await EstoqueController.update(req)
     const estoque = await EstoqueController.listar()

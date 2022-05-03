@@ -1,7 +1,6 @@
-import CardapioTable from '../Cardapio/CriaCardapio.js'
+import FornecedorTable from "../Fornecedor/criaFornecedor.js";
 
-
-CardapioTable
+FornecedorTable
     .sync()
     .then( () => {
         console.log('tabela criada com sucesso')

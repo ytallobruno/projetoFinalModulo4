@@ -1,38 +1,111 @@
-# Nome Projeto 
+# Projeto Final Módulo 4 - API Restaurante
 
 <div id="inicio" align=center>
-  <a href="#sobre">Sobre</a>&nbsp;&nbsp;
-  <a href="#andamento">Andamento</a>&nbsp;&nbsp;
-  <a href="#linguagens">Softwares & Ferramentas utilizadas</a>&nbsp;&nbsp;
-  <a href="#habilidades">Habilidades adquiridas</a>&nbsp;&nbsp;
-    <a href="#contribuir">Como contribuir</a>&nbsp;&nbsp;
+  <a href="#contribuir">Como contribuir</a>&nbsp;&nbsp;
   <a href="#grupo">Autores</a> 
 </div>
 
-<h2 id="sobre">Sobre 🔎</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fringilla mi non molestie molestie. Integer sed mi dapibus urna sollicitudin convallis. Donec elementum accumsan augue, et consectetur urna. Curabitur elementum molestie lectus nec rhoncus. Nullam et augue nec magna viverra bibendum vel vitae metus.</p>
+## Descrição da aplicação:
+A aplicação é um ambiente back-end que gerencia e automatiza uma rotina de pedidos, para qualquer tipo de serviço. Para isso foi utilizado o banco de dados relacional SQLite, foi utilizado o padrão do tipo REST e como organização conceitos de MVC.
 
 <br>
 
-<h2 id="andamento">Andamento do projeto 📈</h2>
+## Ferramentas utilizadas:
+Para o desenvolvimento foi utilizado JavaScript com NodeJS como linguagem da aplicação, Express como framework, o banco de dados relacional SQLite, Sequelize como ORM e hospedagem pela ferramenta de cloud Heroku.
 
-  ![Badge](https://img.shields.io/website?down_message=em%20andamento&label=STATUS&style=for-the-badge&up_message=conclu%C3%ADdo&url=https%3A%2F%2Fgithub.com%2Fytallobruno%2FProjetoFinalModulo44)
+<br>
 
-<h2 id="linguagens">Softwares & Ferramentas utilizadas nesse projeto 📚</h2>
+## Dependencias necessárias:
+```js
+  "dependencies": {
+    "express": "^4.18.1",
+    "path": "^0.12.7",
+    "sequelize": "^6.19.0",
+    "sqlite3": "^5.0.5",
+    "url": "^0.11.0"
+  }
+```
+As dependencias podem ser encontradas <a href = 'https://github.com/ytallobruno/ProjetoFinalModulo4/blob/main/package.json'>neste arquivo</a> do qual o trecho acima foi extraído, para instalar basta rodar o comando abaixo selecionando e copiando o mesmo com as teclas "Ctrl + c" e em seguida colar no terminal com as telas "Ctrl + Shift + v", o comando abaixo já irá fazer o clone deste repositório e instalar as dependencias necessárias.
 
-  - [x] Git
-  - [x] 
-  - [x] 
-  - [x] 
+```
+git clone https://github.com/ytallobruno/ProjetoFinalModulo4.git && cd apiRestNodeJsRestaurante && npm install
+```
+
+<br>
+
+## Inicialização da aplicação via terminal:
+Para inicio da aplicação basta abrir o terminal na pasta do projeto ou executar o código abaixo.
+
+```
+node app.js
+```
+
+<br>
+
+## Observação importante:
+
+A versão NodeJs utilizada para desenvolvimento é a 16.x LTS, logo é necessário intalação de versão igual ou superior para a perfeita execução da mesma.
+
+<br>
+
+## Rotas da api:
+
+Em nossa API temos 5 (cinco) rotas, sendo elas <b> ` "/clientes", "/cardapio", "/estoque", "/pedido" e "/fornecedores"`</b>, onde podemos fazer alguns métodos interessantes. Vamos conferir abaixo utilizando a rota CLIENTES:
+<br>
 
 
-<h2 id="habilidades">Habilidades Adquiridas 📝</h2>
+### Ver todos os pedidos:
 
-  - 
-  - 
-  - 
-  - 
+Utilizar o método HTTP Get no caminho <b>"url da api" + /clientes</b>
+<br>
+<br>
 
+### Buscar pedidos por id:
+
+Utilizar o método HTTP Get no caminho <b>"url da api" + /clientes/id</b>
+<br>
+<br>
+
+### Adicionar clientes:
+Utilizar o método HTTP Post no caminho <b>"url da api" + /clientes</b> com todos os dados necessários para o seu banco de dados. Abaixo segue um json de exemplo para corpo da requisição.
+
+```json
+{
+      "id_comanda": 1,
+      "id_cliente": 1,
+      "nome_cliente": "Ytallo",
+      "email_cliente": "ytallo@bruno.com",
+    }
+```
+<br>
+<br>
+
+### Modificar um pedidos já existente:
+Utilizar o método HTTP Patch no caminho <b>"url da api" + /clientes/id</b>, utilizando o ID da Comanda como referência, passando os valores que deseja alterar especificando seus devidos campos. Para isso basta respeitar a sintaxe json novamente passada abaixo no body da requisição.
+
+```json
+{
+      "id_comanda": 1,
+      "id_cliente": 1,
+      "nome_cliente": "Ytallo Bruno",
+      "email_cliente": "ytallo_bruno@dominio.com",
+    }
+```
+<br>
+
+### Deletar um pedidos:
+Utilizar o método HTTP Delete no caminho <b>"url da api" + /clientes/id</b>.
+<br>
+<br>
+
+
+### Obs.: Caso você apague o arquivo do banco de dados sem querer por algum motivo desconhecido, rode o comando abaixo para criar outro novamente, mas atenção, esse novo banco virar vazio, apenas com a linha 1 contendo o exemplo dos tipos de dados aceitos nele, alterando o arquivo `criarTabela` para a entidade escolhida.
+
+```node
+node ./src/config/criarTabela.js
+```
+<br>
+<hr>
 
 <h2 id="contribuir">Como contribuir 📫</h2>
 
