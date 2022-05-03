@@ -17,8 +17,12 @@ class ValidadorPedido {
     }  */ 
  
  static checaQuantidade(quantidade)  {
+   if(quantidade >= 1){
+     return true
+   }else{
+     return false
+   }
    
-   quantidade >= 1 ?  true : false 
 
  }
 

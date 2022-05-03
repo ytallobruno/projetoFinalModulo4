@@ -14,6 +14,7 @@ const pedidoRouter = express.Router()
        if(ValidadorPedido.checaQuantidade(req.body.quantidade)){
           const dados = req.body
           const pedidoController = new PedidoController(dados)
+          console.log(pedidoController)
           await pedidoController.adicionar(pedidoController)
           res.status(200).json({pedidoController})
           res.send(req.body)
@@ -28,7 +29,7 @@ const pedidoRouter = express.Router()
 
 
 
-/*  pedidoRouter.get('/pedido', async (req, res) => {
+  pedidoRouter.get('/pedido/:id', async (req, res) => {
   try {
     const pedido = await PedidoController.listarUmItemPorId(req)
     if(pedido != null){
@@ -53,7 +54,7 @@ pedidoRouter.get('/pedido', async (req, res) => {
   }) 
 
 
- pedidoRouter.delete('/pedido', async (req, res) => {
+ pedidoRouter.delete('/pedido/:id', async (req, res) => {
   try {
      const deletado = await PedidoController.deletar(req.params.id)
      const pedido = await PedidoController.listar()
@@ -63,7 +64,7 @@ pedidoRouter.get('/pedido', async (req, res) => {
   }
 }) 
 
-pedidoRouter.patch('/pedido', async (req, res) => {
+pedidoRouter.patch('/pedido/:id', async (req, res) => {
   try {
     const modificado = await PedidoController.update(req)
     const pedido = await PedidoController.listar()
@@ -73,7 +74,7 @@ pedidoRouter.patch('/pedido', async (req, res) => {
     res.status(400).json({erro: e.message})
   }
 })
- */
+ 
 export default pedidoRouter
 
 
