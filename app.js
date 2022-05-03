@@ -1,4 +1,6 @@
 import express from "express";
+import database from "./src/config/db.js";
+import pedidoRouter from "./src/routers/Pedidos/app.js";
 import estoqueRouter from "./src/routers/Estoque/app.js";
 import ClientesRouter from "./src/routers/Clientes/app.js";
 import cardapioRouter from "./src/routers/Cardapio/app.js";
@@ -14,6 +16,7 @@ app.listen(port, ()=> {
 })
 
 
+app.use('/api/', pedidoRouter)
 app.use("/api/", estoqueRouter)
 app.use("/api/clientes", ClientesRouter)
 app.use("/api/", cardapioRouter)

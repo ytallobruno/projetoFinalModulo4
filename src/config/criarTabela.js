@@ -1,9 +1,15 @@
-import ClientesTable from '../Clientes/CriarCliente.js'
+import PedidoTable from '../Pedidos/CriaPedido.js'
 
 
-ClientesTable
+
+
+
+PedidoTable
     .sync()
     .then( () => {
         console.log('tabela criada com sucesso')
     })
     .catch(console.error)
+
+
+   
