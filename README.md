@@ -37,7 +37,7 @@ git clone https://github.com/ytallobruno/ProjetoFinalModulo4.git && cd apiRestNo
 Para inicio da aplicação basta abrir o terminal na pasta do projeto ou executar o código abaixo.
 
 ```
-node app.js
+npm start
 ```
 
 <br>
