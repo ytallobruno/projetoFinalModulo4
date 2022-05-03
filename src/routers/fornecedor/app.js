@@ -1,19 +1,20 @@
 import express from "express";
 import FornecedorController from "../../Fornecedor/controllers/FornControllers.js";
-import Validador from "../../utils/ValidaForn.js";
+import FornecedorModel from "../../Fornecedor/models/FornModel.js";
+import Validador from "../../utils/Fornecedores/ValidaForn.js";
 
 const fornecedorRouter = express.Router()
 
-fornecedorRouter.post('/create/fornecedor', async (req, res) => {
+fornecedorRouter.post('/', async (req, res) => {
   try {
     if (Validador.checkRazao(req.body.razao_social))
     {
       try {
         if (Validador.checkTelefone(req.body.telefone)){
               const dados = req.body
-              const fornecedorController = new FornecedorController(dados)
-              await fornecedorController.adicionar(fornecedorController)
-              res.status(200).json({fornecedorController}) } 
+              const fornecedor = new FornecedorModel(dados)
+              await FornecedorController.adicionar(fornecedor)
+              res.status(200).json({fornecedor}) } 
         else {
           throw new Error ("O fornecedor não pode ser inserido, insira razão social válida.")  } 
         } 
@@ -27,10 +28,10 @@ fornecedorRouter.post('/create/fornecedor', async (req, res) => {
     } catch (e){
       res.status(400).json({erro: e.message})
     }
-  }) 
+  });
  
 
-fornecedorRouter.get('/fornecedor/:id_fornecedor', async (req, res) => {
+fornecedorRouter.get('/:id_fornecedor', async (req, res) => {
   try {
     const fornecedor = await FornecedorController.listarUmItemPorId(req)
     if(fornecedor != null){
@@ -41,10 +42,10 @@ fornecedorRouter.get('/fornecedor/:id_fornecedor', async (req, res) => {
     } catch (e) {
       res.status(400).json({erro: e.message})
     }
-}) 
+});
 
 
-fornecedorRouter.get('/fornecedor', async (req, res) => {
+fornecedorRouter.get('/', async (req, res) => {
   try {
       const fornecedor = await FornecedorController.listar()
       console.log(req.params)
@@ -52,9 +53,9 @@ fornecedorRouter.get('/fornecedor', async (req, res) => {
       } catch (e) {
        res.status(400).json({erro: e.message})
       }
-  })  
+  });
 
-fornecedorRouter.delete('/delete/fornecedor/:id_fornecedor', async (req, res) => {
+fornecedorRouter.delete('/:id_fornecedor', async (req, res) => {
   try {
      const delet = await FornecedorController.deletar(req.params.id_fornecedor)
      const fornecedor = await FornecedorController.listar()
@@ -62,9 +63,9 @@ fornecedorRouter.delete('/delete/fornecedor/:id_fornecedor', async (req, res) =>
   } catch (e) {
     res.status(400).json({erro: e.message})
   }
-})
+});
 
-fornecedorRouter.patch('/patch/fornecedor/:id_fornecedor', async (req, res) => {
+fornecedorRouter.patch('/:id_fornecedor', async (req, res) => {
   try {
     console.log (req.params.id_fornecedor)
     const modif = await FornecedorController.update(req)
@@ -74,7 +75,7 @@ fornecedorRouter.patch('/patch/fornecedor/:id_fornecedor', async (req, res) => {
   } catch (e) {
     res.status(400).json({erro: e.message})
   }
-})
+});
 
 
-export default fornecedorRouter
+export default fornecedorRouter;

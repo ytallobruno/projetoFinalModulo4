@@ -11,4 +11,6 @@ app.listen(port, ()=> {
     console.log(`A API está funcionando com sucesso na porta ${port}`)
 })
 
-app.use("/api/", fornecedorRouter)
+
+
+app.use ("/api/fornecedor", fornecedorRouter)
