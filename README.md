@@ -6,12 +6,17 @@
 </div>
 
 ## Descrição da aplicação:
-A aplicação é um ambiente back-end que gerencia e automatiza uma rotina de um restaurante. Para isso foi utilizado o banco de dados relacional SQLite, foi utilizado o padrão do tipo REST e como organização conceitos de MVC.
+A aplicação é um ambiente back-end que utilizamos para simular uma rotina de um restaurante. Para isso foi utilizado o banco de dados relacional SQLite, o padrão do tipo REST e como organização conceitos de Repository.
 
 <br>
 
 ## Ferramentas utilizadas:
-Para o desenvolvimento foi utilizado JavaScript com NodeJS como linguagem da aplicação, Express como framework, o banco de dados relacional SQLite, Sequelize como ORM e hospedagem pela ferramenta de cloud Heroku.
+Utilizamos as seguintes ferramentas em nossa API:
+- Linguagem: Javascript com NodeJS
+- Framework: Express
+- Banco de dados relacional: SQLite
+- ORM: Sequelize
+- Deploy: Heroku
 
 <br>
 
@@ -25,7 +30,9 @@ Para o desenvolvimento foi utilizado JavaScript com NodeJS como linguagem da apl
     "url": "^0.11.0"
   }
 ```
-As dependencias podem ser encontradas <a href = 'https://github.com/ytallobruno/ProjetoFinalModulo4/blob/main/package.json'>neste arquivo</a> do qual o trecho acima foi extraído, para instalar basta rodar o comando abaixo selecionando e copiando o mesmo com as teclas "Ctrl + c" e em seguida colar no terminal com as telas "Ctrl + Shift + v", o comando abaixo já irá fazer o clone deste repositório e instalar as dependencias necessárias.
+Você também pode encontrar as dependências <a href = 'https://github.com/ytallobruno/ProjetoFinalModulo4/blob/main/package.json'>neste arquivo</a> do qual o trecho acima foi extraído.
+
+Para instalar basta rodar o comando abaixo selecionando e copiando o mesmo com as teclas "Ctrl + c" e em seguida colar no terminal com as telas "Ctrl + Shift + v", e assim irá fazer o clone deste repositório e instalar as dependencias necessárias.
 
 ```
 git clone https://github.com/ytallobruno/ProjetoFinalModulo4.git && cd apiRestNodeJsRestaurante && npm install
@@ -42,17 +49,16 @@ npm start
 
 <br>
 
-## Observação importante:
+### Observação importante:
 
-A versão NodeJs utilizada para desenvolvimento é a 16.x LTS, logo é necessário intalação de versão igual ou superior para a perfeita execução da mesma.
+A versão NodeJs utilizada para desenvolvimento é a 16.x LTS. É necessário a instalação de versão igual ou superior para a perfeita execução.
 
 <br>
 
 ## Rotas da api:
 
-Em nossa API temos 5 (cinco) rotas, sendo elas <b> ` "/clientes", "/cardapio", "/estoque", "/pedido" e "/fornecedores"`</b>, onde podemos fazer alguns métodos interessantes. Vamos conferir abaixo utilizando a rota CLIENTES:
+Em nossa API temos 5 (cinco) rotas, sendo elas <b> ` "/clientes", "/cardapio", "/estoque", "/pedido" e "/fornecedores"`</b>, onde podemos fazer alguns métodos interessantes. Vamos conferir abaixo utilizando a rota <b>CLIENTES</b>:
 <br>
-
 
 ### Ver todos os clientes:
 
@@ -67,7 +73,7 @@ Utilizar o método HTTP Get no caminho <b>`"url da api" + /clientes/id`</b>
 <br>
 
 ### Adicionar clientes:
-Utilizar o método HTTP Post no caminho <b>`"url da api" + /clientes`</b> com todos os dados necessários para o seu banco de dados. Abaixo segue um json de exemplo para corpo da requisição.
+Utilizar o método HTTP Post no caminho <b>`"url da api" + /clientes`</b> com todos os dados necessários para o seu banco de dados. Abaixo segue um json de exemplo para o corpo da requisição:
 
 ```json
 {
@@ -78,10 +84,10 @@ Utilizar o método HTTP Post no caminho <b>`"url da api" + /clientes`</b> com to
     }
 ```
 <br>
-<br>
+
 
 ### Modificar um cliente já existente:
-Utilizar o método HTTP Patch no caminho <b>`"url da api" + /clientes/id`</b>, utilizando o ID da Comanda como referência, passando os valores que deseja alterar especificando seus devidos campos. Para isso basta respeitar a sintaxe json novamente passada abaixo no body da requisição.
+Utilizar o método HTTP Patch no caminho <b>`"url da api" + /clientes/id`</b>, utilizando o <b>ID da Comanda</b> como referência, passando os valores que deseja alterar especificando seus devidos campos mas sempre respeitando a sintaxe json novamente passada abaixo no body da requisição.
 
 ```json
 {
@@ -91,6 +97,7 @@ Utilizar o método HTTP Patch no caminho <b>`"url da api" + /clientes/id`</b>, u
       "email_cliente": "ytallo_bruno@dominio.com",
     }
 ```
+
 <br>
 
 ### Deletar um pedidos:
