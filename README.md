@@ -54,13 +54,13 @@ Em nossa API temos 5 (cinco) rotas, sendo elas <b> ` "/clientes", "/cardapio", "
 <br>
 
 
-### Ver todos os pedidos:
+### Ver todos os clientes:
 
 Utilizar o método HTTP Get no caminho <b>"url da api" + /clientes</b>
 <br>
 <br>
 
-### Buscar pedidos por id:
+### Buscar clientes por id:
 
 Utilizar o método HTTP Get no caminho <b>"url da api" + /clientes/id</b>
 <br>
@@ -80,7 +80,7 @@ Utilizar o método HTTP Post no caminho <b>"url da api" + /clientes</b> com todo
 <br>
 <br>
 
-### Modificar um pedidos já existente:
+### Modificar um cliente já existente:
 Utilizar o método HTTP Patch no caminho <b>"url da api" + /clientes/id</b>, utilizando o ID da Comanda como referência, passando os valores que deseja alterar especificando seus devidos campos. Para isso basta respeitar a sintaxe json novamente passada abaixo no body da requisição.
 
 ```json
@@ -99,11 +99,25 @@ Utilizar o método HTTP Delete no caminho <b>"url da api" + /clientes/id</b>.
 <br>
 
 
-### Obs.: Caso você apague o arquivo do banco de dados sem querer por algum motivo desconhecido, rode o comando abaixo para criar outro novamente, mas atenção, esse novo banco virar vazio, apenas com a linha 1 contendo o exemplo dos tipos de dados aceitos nele, alterando o arquivo `criarTabela` para a entidade escolhida.
+> Obs.: Caso você apague o arquivo do banco de dados sem querer por algum motivo desconhecido, preencha o arquivo `criarTabela` de acordo com a entidade escolhida utilizando o comando no formato abaixo para criar outro, mas atenção, esse novo banco virar vazio, apenas com a linha 1 contendo o exemplo dos tipos de dados aceitos nele.
+>
+> ```js
+> import ClientesTable from "../Clientes/CriarCliente.js";
+>
+> ClientesTable
+>    .sync()
+>    .then( () => {
+>        console.log('tabela criada com sucesso')
+>    })
+>    .catch(console.error)
+>```
+>
+> E logo em seguida, rode o comando abaixo para criar a tabela no banco de dados:
+>
+>```node
+>node ./src/config/criarTabela.js
+>```
 
-```node
-node ./src/config/criarTabela.js
-```
 <br>
 <hr>
 
