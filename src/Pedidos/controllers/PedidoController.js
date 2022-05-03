@@ -1,7 +1,4 @@
-import PedidoTable from "../CriaPedido.js";
-import PedidoModel from "../models/PedidoModel.js";
-import Sequelize from 'sequelize'
-
+import PedidoTable from "../criaPedido.js";
 
 class PedidoController {
 
