@@ -56,18 +56,18 @@ Em nossa API temos 5 (cinco) rotas, sendo elas <b> ` "/clientes", "/cardapio", "
 
 ### Ver todos os clientes:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /clientes</b>
+Utilizar o método HTTP Get no caminho <b>`"url da api" + /clientes`</b>
 <br>
 <br>
 
 ### Buscar clientes por id:
 
-Utilizar o método HTTP Get no caminho <b>"url da api" + /clientes/id</b>
+Utilizar o método HTTP Get no caminho <b>`"url da api" + /clientes/id`</b>
 <br>
 <br>
 
 ### Adicionar clientes:
-Utilizar o método HTTP Post no caminho <b>"url da api" + /clientes</b> com todos os dados necessários para o seu banco de dados. Abaixo segue um json de exemplo para corpo da requisição.
+Utilizar o método HTTP Post no caminho <b>`"url da api" + /clientes`</b> com todos os dados necessários para o seu banco de dados. Abaixo segue um json de exemplo para corpo da requisição.
 
 ```json
 {
@@ -81,7 +81,7 @@ Utilizar o método HTTP Post no caminho <b>"url da api" + /clientes</b> com todo
 <br>
 
 ### Modificar um cliente já existente:
-Utilizar o método HTTP Patch no caminho <b>"url da api" + /clientes/id</b>, utilizando o ID da Comanda como referência, passando os valores que deseja alterar especificando seus devidos campos. Para isso basta respeitar a sintaxe json novamente passada abaixo no body da requisição.
+Utilizar o método HTTP Patch no caminho <b>`"url da api" + /clientes/id`</b>, utilizando o ID da Comanda como referência, passando os valores que deseja alterar especificando seus devidos campos. Para isso basta respeitar a sintaxe json novamente passada abaixo no body da requisição.
 
 ```json
 {
@@ -94,7 +94,7 @@ Utilizar o método HTTP Patch no caminho <b>"url da api" + /clientes/id</b>, uti
 <br>
 
 ### Deletar um pedidos:
-Utilizar o método HTTP Delete no caminho <b>"url da api" + /clientes/id</b>.
+Utilizar o método HTTP Delete no caminho <b>`"url da api" + /clientes/id`</b>.
 <br>
 <br>
 
