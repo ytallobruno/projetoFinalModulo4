@@ -6,7 +6,7 @@
 </div>
 
 ## Descrição da aplicação:
-A aplicação é um ambiente back-end que gerencia e automatiza uma rotina de pedidos, para qualquer tipo de serviço. Para isso foi utilizado o banco de dados relacional SQLite, foi utilizado o padrão do tipo REST e como organização conceitos de MVC.
+A aplicação é um ambiente back-end que gerencia e automatiza uma rotina de um restaurante. Para isso foi utilizado o banco de dados relacional SQLite, foi utilizado o padrão do tipo REST e como organização conceitos de MVC.
 
 <br>
 
