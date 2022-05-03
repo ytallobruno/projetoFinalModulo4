@@ -1,9 +1,12 @@
-import EstoqueTable from '../Estoque/CriaEstoque.js'
+import PedidoTable from '../Pedidos/CriaPedido.js'
 
 
-EstoqueTable
+PedidoTable
     .sync()
     .then( () => {
         console.log('tabela criada com sucesso')
     })
     .catch(console.error)
+
+
+   
