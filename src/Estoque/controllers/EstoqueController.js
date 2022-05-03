@@ -2,14 +2,6 @@ import EstoqueTable from "../CriaEstoque.js"
 import EstoqueModel from "../models/EstoqueModel.js";
 
 class EstoqueController {
-    constructor({ id, nome_produto, quantidade, id_fornecedor, tipo, validade }){
-        this.id = id;
-        this.nome_produto = nome_produto;
-        this.quantidade = quantidade;
-        this.id_fornecedor = id_fornecedor;
-        this.tipo = tipo;
-        this.validade = validade
-    }
 
     static listar (){
         return EstoqueTable.findAll()
@@ -21,8 +13,7 @@ class EstoqueController {
 
     }
 
-    adicionar(){
-        const estoque = new EstoqueModel(this)
+    static adicionar(estoque){
         return EstoqueTable.create(estoque)
     }
 
@@ -36,7 +27,7 @@ class EstoqueController {
         )
     }
 
-    static update (req) {
+    static update(req) {
         EstoqueTable.update(
             req.body
         ,
