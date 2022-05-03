@@ -7,7 +7,7 @@ class CardapioController {
     }
     
     static listarUmItemPorId(req) {
-        return CardapioTable.findByPk(req.params.id);
+        return CardapioTable.findByPk(req.params.id_item);
     }
     
     static adicionar(cardapio) {
@@ -17,7 +17,7 @@ class CardapioController {
     static deletar(idDeletado) {
         CardapioTable.destroy({
         where: {
-            id_comanda: idDeletado,
+            id_item: idDeletado,
         },
         });
     }
@@ -25,7 +25,7 @@ class CardapioController {
     static update(req) {
         CardapioTable.update(req.body, {
         where: {
-            id_comanda: req.params.id,
+            id_item: req.params.id_item,
         },
         });
     }
