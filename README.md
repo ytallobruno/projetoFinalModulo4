@@ -6,7 +6,7 @@
 </div>
 
 ## Descrição da aplicação:
-A aplicação é um ambiente back-end que utilizamos para simular uma rotina de um restaurante. Para isso foi utilizado o banco de dados relacional SQLite, o padrão do tipo REST e como organização conceitos de Repository.
+A aplicação é um ambiente back-end que utilizamos para simular uma rotina de um restaurante. Para isso foi utilizado o banco de dados relacional SQLite, o padrão do tipo REST e como organização conceitos iniciais de Repository, porém com noções de MVC.
 
 <br>
 
