@@ -100,7 +100,7 @@ Utilizar o método HTTP Patch no caminho <b>`"url da api" + /api/clientes/id`</b
 
 <br>
 
-### Deletar um pedidos:
+### Deletar um Cliente:
 Utilizar o método HTTP Delete no caminho <b>`"url da api" + /api/clientes/id`</b>.
 <br>
 <br>
