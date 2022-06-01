@@ -5,21 +5,21 @@ class ClientesTable extends Model {}
 
 ClientesTable.init(
   {
-    id_comanda: {
+    id_cliente: {
       type: Sequelize.INTEGER,
       primaryKey: true,
     },
 
-    id_pedido: {
-      type: Sequelize.INTEGER,
-    },
-    
-    nome_cliente: {
+      nome_cliente: {
       type: Sequelize.TEXT,
     },
     
     email_cliente: {
       type: Sequelize.TEXT,
+    },
+
+    senha: {
+      type: Sequelize.CHAR,
     },
   },
 

@@ -11,8 +11,8 @@ CardapioTable.init({
             primaryKey: true,
         },
 
-        id_pedido: {
-            type: Sequelize.INTEGER,
+        nome: {
+            type: Sequelize.CHAR
         },
 
         descricao: {
@@ -22,6 +22,11 @@ CardapioTable.init({
         preco: {
             type: Sequelize.CHAR
         },
+
+        img: {
+            type: Sequelize.STRING
+        },
+
     },
 
     {
