@@ -1,5 +1,4 @@
-import FornecedorTable from '../Fornecedor/criaFornecedor.js'
-
+import FornecedorTable from "../Fornecedor/criaFornecedor.js";
 
 FornecedorTable
     .sync()

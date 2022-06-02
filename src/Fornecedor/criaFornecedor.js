@@ -1,5 +1,5 @@
-import Sequelize, { Model } from 'sequelize'
-import database from '../config/db.js'
+import Sequelize, { Model } from 'sequelize';
+import database from '../config/db.js';
 
 class FornecedorTable extends Model {}
 
