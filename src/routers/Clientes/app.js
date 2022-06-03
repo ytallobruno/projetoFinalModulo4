@@ -6,6 +6,7 @@ import Validador from "../../utils/Clientes/Validador.js";
 const ClientesRouter = express.Router();
 
 ClientesRouter.post("/", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
   try {
     if (Validador.checaEmail(req.body.email_cliente)) {
       const dados = Object.values(req.body)
@@ -21,6 +22,7 @@ ClientesRouter.post("/", async (req, res) => {
 });
 
 ClientesRouter.get("/:id", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
   try {
     const cliente = await ClientesController.listarUmItemPorId(req);
     if (cliente != null) {
@@ -36,6 +38,7 @@ ClientesRouter.get("/:id", async (req, res) => {
 });
 
 ClientesRouter.get("/", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
   try {
     const clientes = await ClientesController.listar();
     console.log(req.params);
@@ -56,6 +59,7 @@ ClientesRouter.delete("/:id", async (req, res) => {
 });
 
 ClientesRouter.patch("/:id", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
   try {
     const modificado = await ClientesController.update(req);
     const cliente = await ClientesController.listarUmItemPorId(req);

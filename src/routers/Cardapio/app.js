@@ -19,6 +19,7 @@ cardapioRouter.post("/", async (req, res) => {
 });
 
 cardapioRouter.get("/:id_item", async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*")
     try {
         const cardapio = await CardapioController.listarUmItemPorId(req);
         if (cardapio != null) {
@@ -38,6 +39,7 @@ cardapioRouter.get("/:id_item", async (req, res) => {
 });
 
 cardapioRouter.get("/", async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*")
     try {
         const cardapio = await CardapioController.listar();
         console.log(req.params);
@@ -66,6 +68,7 @@ cardapioRouter.delete("/:id_item", async (req, res) => {
 });
 
 cardapioRouter.patch("/:id_item", async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*")
     try {
         const modificado = await CardapioController.update(req);
         const cardapio = await CardapioController.listarUmItemPorId(req);
