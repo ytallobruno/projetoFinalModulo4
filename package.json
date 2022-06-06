@@ -24,12 +24,13 @@
   },
   "homepage": "https://github.com/ytallobruno/ProjetoFinalModulo4#readme",
   "dependencies": {
-    "express": "^4.18.0",
-    "node": "^17.7.2",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
+    "node": "^17.7.2",
     "path": "^0.12.7",
     "sequelize": "^6.19.0",
     "sqlite3": "^5.0.5",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "vite": "^2.9.9"
   }
 }

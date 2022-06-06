@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import fornecedorRouter from "./src/routers/fornecedor/app.js";
 import database from "./src/config/db.js";
 import pedidoRouter from "./src/routers/Pedidos/app.js";
@@ -9,6 +10,7 @@ import cardapioRouter from "./src/routers/Cardapio/app.js";
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 const port = process.env.PORT || 3000;
 

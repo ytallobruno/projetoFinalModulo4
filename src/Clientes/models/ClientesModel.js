@@ -1,9 +1,9 @@
 class ClientesModel {
-  constructor( id_comanda, id_pedido, nome_cliente, email_cliente ) {
-    this.id_comanda = id_comanda;
-    this.id_pedido = id_pedido;
+  constructor( id_cliente, nome_cliente, email_cliente, senha ) {
+    this.id_cliente = id_cliente;
     this.nome_cliente = nome_cliente;
     this.email_cliente = email_cliente;
+    this.senha = senha;
   }
 }
 

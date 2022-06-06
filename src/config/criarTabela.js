@@ -1,6 +1,6 @@
-import FornecedorTable from "../Fornecedor/criaFornecedor.js";
+import ClienteTable from "../Clientes/CriarCliente.js";
 
-FornecedorTable
+ClienteTable 
     .sync()
     .then( () => {
         console.log('tabela criada com sucesso')
